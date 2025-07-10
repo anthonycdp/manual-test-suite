@@ -1,0 +1,99 @@
+Test_ID,Module,Test_Title,Priority,Severity,Preconditions,Test_Steps,Expected_Result,Test_Data,Notes
+TC_AUTH_001,Authentication,Cadastro de usuário com dados válidos,P1,High,"Sistema acessível, página de cadastro carregada","1. Acessar página de cadastro
+2. Preencher campo Nome: 'João Silva'
+3. Preencher campo Email: 'joao.silva@email.com'
+4. Preencher campo Senha: 'MinhaSenh@123'
+5. Confirmar senha: 'MinhaSenh@123'
+6. Aceitar termos de uso
+7. Clicar em 'Cadastrar'","Usuário cadastrado com sucesso, redirecionamento para página de login com mensagem de confirmação","Nome: João Silva
+Email: joao.silva@email.com
+Senha: MinhaSenh@123",Validar critérios de senha forte
+TC_AUTH_002,Authentication,Login com credenciais válidas,P1,High,"Usuário cadastrado no sistema","1. Acessar página de login
+2. Preencher campo Email: 'joao.silva@email.com'
+3. Preencher campo Senha: 'MinhaSenh@123'
+4. Clicar em 'Entrar'","Login realizado com sucesso, redirecionamento para página inicial com nome do usuário visível","Email: joao.silva@email.com
+Senha: MinhaSenh@123",Verificar sessão ativa
+TC_AUTH_003,Authentication,Login com email inválido,P2,Medium,"Sistema acessível, página de login carregada","1. Acessar página de login
+2. Preencher campo Email: 'email_inexistente@test.com'
+3. Preencher campo Senha: 'qualquersenha'
+4. Clicar em 'Entrar'","Mensagem de erro exibida: 'Email ou senha incorretos'. Usuário permanece na página de login","Email: email_inexistente@test.com
+Senha: qualquersenha",Não revelar se email existe
+TC_AUTH_004,Authentication,Logout do sistema,P1,Medium,"Usuário logado no sistema","1. Estando logado, localizar botão 'Sair'
+2. Clicar em 'Sair'
+3. Confirmar logout se houver modal","Usuário deslogado, redirecionamento para página inicial sem dados pessoais visíveis, sessão encerrada",N/A,Verificar limpeza da sessão
+TC_AUTH_005,Authentication,Recuperação de senha com email válido,P2,Medium,"Usuário cadastrado no sistema","1. Acessar página de login
+2. Clicar em 'Esqueci minha senha'
+3. Preencher email: 'joao.silva@email.com'
+4. Clicar em 'Enviar'","Mensagem de confirmação exibida: 'Link de recuperação enviado para seu email'","Email: joao.silva@email.com",Simular envio de email
+TC_CAT_001,Catalog,Visualizar lista de produtos,P1,High,"Sistema acessível, produtos cadastrados","1. Acessar página inicial
+2. Navegar para seção de produtos
+3. Observar carregamento da lista","Lista de produtos exibida com: imagem, nome, preço, botão 'Ver detalhes'",N/A,Verificar carregamento de imagens
+TC_CAT_002,Catalog,Buscar produto por nome,P1,High,"Sistema com produtos cadastrados","1. Localizar campo de busca
+2. Digitar: 'camiseta'
+3. Pressionar Enter ou clicar em buscar","Produtos relacionados a 'camiseta' exibidos, outros produtos filtrados","Termo: camiseta",Validar busca case-insensitive
+TC_CAT_003,Catalog,Filtrar produtos por categoria,P2,Medium,"Produtos de diferentes categorias cadastrados","1. Acessar catálogo de produtos
+2. Selecionar filtro 'Roupas'
+3. Aplicar filtro","Apenas produtos da categoria 'Roupas' exibidos",N/A,Verificar contador de resultados
+TC_CAT_004,Catalog,Visualizar detalhes do produto,P1,High,"Lista de produtos disponível","1. Na lista de produtos, clicar em um produto
+2. Observar carregamento da página de detalhes","Página de detalhes exibida com: imagens, descrição, preço, especificações, botão 'Adicionar ao carrinho'",N/A,Validar todas as informações
+TC_CAT_005,Catalog,Busca sem resultados,P3,Low,"Sistema com produtos cadastrados","1. Acessar campo de busca
+2. Digitar termo inexistente: 'xyzabc123'
+3. Executar busca","Mensagem amigável: 'Nenhum produto encontrado. Tente outros termos.'","Termo: xyzabc123",Verificar mensagem amigável
+TC_CART_001,Shopping Cart,Adicionar produto ao carrinho,P1,High,"Produto disponível no catálogo","1. Acessar página de detalhes de um produto
+2. Verificar preço e disponibilidade
+3. Clicar em 'Adicionar ao carrinho'","Produto adicionado ao carrinho, contador do carrinho atualizado, mensagem de confirmação exibida",N/A,Verificar ícone do carrinho
+TC_CART_002,Shopping Cart,Visualizar carrinho de compras,P1,High,"Produtos adicionados ao carrinho","1. Clicar no ícone do carrinho
+2. Observar conteúdo do carrinho","Carrinho exibido com: produtos, quantidades, preços individuais, subtotal, total",N/A,Validar cálculos
+TC_CART_003,Shopping Cart,Alterar quantidade no carrinho,P1,High,"Produto no carrinho","1. Abrir carrinho de compras
+2. Localizar campo quantidade de um produto
+3. Alterar quantidade de 1 para 3
+4. Confirmar alteração","Quantidade atualizada, preços recalculados automaticamente, total atualizado",N/A,Verificar limites mínimo/máximo
+TC_CART_004,Shopping Cart,Remover produto do carrinho,P1,Medium,"Produto no carrinho","1. Abrir carrinho de compras
+2. Localizar produto a ser removido
+3. Clicar em 'Remover' ou ícone de lixeira
+4. Confirmar remoção se necessário","Produto removido do carrinho, totais recalculados, carrinho atualizado",N/A,Verificar carrinho vazio
+TC_CART_005,Shopping Cart,Carrinho vazio,P3,Low,"Carrinho sem produtos","1. Acessar carrinho vazio
+2. Observar conteúdo","Mensagem: 'Seu carrinho está vazio' e link para 'Continuar comprando'",N/A,UX para carrinho vazio
+TC_CHECK_001,Checkout,Finalizar compra com dados válidos,P1,Critical,"Produtos no carrinho, usuário logado","1. Ir para checkout
+2. Preencher dados de entrega
+3. Selecionar forma de pagamento
+4. Revisar pedido
+5. Confirmar compra","Pedido criado com sucesso, página de confirmação com número do pedido, carrinho limpo","Endereço: Rua A, 123, São Paulo, SP
+CEP: 01234-567
+Pagamento: Cartão de crédito",Validar geração de número do pedido
+TC_CHECK_002,Checkout,Checkout sem estar logado,P2,High,"Produtos no carrinho, usuário não logado","1. Adicionar produtos ao carrinho
+2. Tentar ir para checkout","Redirecionamento para página de login com mensagem: 'Faça login para continuar sua compra'",N/A,Manter carrinho após login
+TC_CHECK_003,Checkout,Validação de campos obrigatórios,P2,Medium,"Checkout iniciado, usuário logado","1. Acessar página de checkout
+2. Deixar campos obrigatórios em branco
+3. Tentar finalizar compra","Mensagens de erro para campos obrigatórios: 'Este campo é obrigatório'",N/A,Validar todos os campos
+TC_CHECK_004,Checkout,Selecionar forma de pagamento,P1,High,"Checkout em andamento","1. Preencher dados de entrega
+2. Navegar para seleção de pagamento
+3. Selecionar 'Cartão de crédito'
+4. Preencher dados do cartão","Forma de pagamento selecionada, campos específicos exibidos","Cartão: 4111 1111 1111 1111
+Validade: 12/28
+CVV: 123",Usar dados de teste
+TC_ORDER_001,Orders,Visualizar histórico de pedidos,P2,Medium,"Usuário logado com pedidos realizados","1. Acessar área 'Minha conta'
+2. Clicar em 'Meus pedidos'
+3. Observar lista de pedidos","Lista de pedidos exibida com: número, data, status, valor total, link para detalhes",N/A,Ordenar por data decrescente
+TC_ORDER_002,Orders,Visualizar detalhes do pedido,P2,Medium,"Pedido existente no histórico","1. Acessar histórico de pedidos
+2. Clicar em um pedido específico
+3. Observar detalhes","Detalhes completos: produtos, quantidades, preços, dados de entrega, forma de pagamento, status",N/A,Validar todas as informações
+TC_ORDER_003,Orders,Cancelar pedido,P3,Medium,"Pedido com status 'Aguardando confirmação'","1. Acessar detalhes do pedido
+2. Clicar em 'Cancelar pedido'
+3. Confirmar cancelamento
+4. Informar motivo","Pedido cancelado, status atualizado para 'Cancelado', mensagem de confirmação",N/A,Verificar política de cancelamento
+TC_RESP_001,Responsiveness,Layout em tablet,P2,Medium,"Acesso via tablet (768px-1024px)","1. Acessar site via tablet
+2. Navegar pelas principais páginas
+3. Testar funcionalidades principais","Layout adaptado para tablet, elementos bem posicionados, funcionalidades operacionais",N/A,Testar orientação retrato/paisagem
+TC_RESP_002,Responsiveness,Layout em mobile,P2,Medium,"Acesso via smartphone (<768px)","1. Acessar site via smartphone
+2. Testar menu mobile
+3. Verificar usabilidade do carrinho","Layout mobile responsivo, menu hambúrguer funcional, carrinho acessível",N/A,Testar diferentes resoluções
+TC_COMP_001,Compatibility,Funcionamento no Chrome,P1,High,"Google Chrome versão mais recente","1. Abrir site no Chrome
+2. Executar fluxo completo de compra
+3. Verificar todas as funcionalidades","Todas as funcionalidades operando corretamente no Chrome",N/A,Versão atual do Chrome
+TC_COMP_002,Compatibility,Funcionamento no Firefox,P2,Medium,"Mozilla Firefox versão mais recente","1. Abrir site no Firefox
+2. Executar fluxo completo de compra
+3. Verificar todas as funcionalidades","Todas as funcionalidades operando corretamente no Firefox",N/A,Versão atual do Firefox
+TC_COMP_003,Compatibility,Funcionamento no Safari,P2,Medium,"Safari versão mais recente (Mac)","1. Abrir site no Safari
+2. Executar fluxo completo de compra
+3. Verificar todas as funcionalidades","Todas as funcionalidades operando corretamente no Safari",N/A,Testar no macOS
