@@ -15,16 +15,20 @@
 
 ## 📋 Índice
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Visão Geral do Sistema](#visão-geral-do-sistema)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Começando](#começando)
-- [Documentação](#documentação)
-- [Execução de Testes](#execução-de-testes)
-- [Ferramentas e Tecnologias](#ferramentas-e-tecnologias)
-- [Exemplos de Uso](#exemplos-de-uso)
-- [Contribuindo](#contribuindo)
-- [Licença](#licença)
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Visão Geral do Sistema](#-visão-geral-do-sistema)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Começando](#-começando)
+- [Documentação](#-documentação)
+- [Execução de Testes](#-execução-de-testes)
+- [Ferramentas e Tecnologias](#️-ferramentas-e-tecnologias)
+- [Exemplos de Uso](#-exemplos-de-uso)
+- [Métricas do Projeto](#-métricas-do-projeto)
+- [Resultados de Aprendizagem](#-resultados-de-aprendizagem)
+- [Contribuindo](#-contribuindo)
+- [Suporte](#-suporte)
+- [Agradecimentos](#-agradecimentos)
+- [Licença](#-licença)
 
 ---
 
