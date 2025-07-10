@@ -4,6 +4,8 @@
 
 **Arquivo Principal**: `test-cases.csv` - Importe este arquivo no Excel ou Google Sheets para melhor visualização e gestão.
 
+**Visualização Legível**: `test-cases-readable.md` - Versão formatada em Markdown para fácil leitura dos casos de teste.
+
 **Total de Casos**: 25 casos de teste cobrindo todos os módulos principais.
 
 ## 🎯 Distribuição por Módulo

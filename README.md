@@ -73,6 +73,7 @@ manual-test-suite/
 │   └── 📄 requirements-traceability.md  # Cobertura de requisitos
 ├── 📂 test-cases/
 │   ├── 📄 test-cases.csv                # Casos de teste estruturados
+│   ├── 📄 test-cases-readable.md        # Visualização legível dos casos
 │   ├── 📄 test-cases-readme.md          # Guia de casos de teste
 │   └── 📂 test-data/
 │       └── 📄 sample-data.md            # Conjuntos de dados de teste
