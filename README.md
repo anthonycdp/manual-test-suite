@@ -75,6 +75,7 @@ manual-test-suite/
 │   ├── 📄 test-cases.csv                # Casos de teste estruturados
 │   ├── 📄 test-cases-readable.md        # Visualização legível dos casos
 │   ├── 📄 test-cases-readme.md          # Guia de casos de teste
+│   ├── 📄 import-guide.md               # Guia de importação para planilhas
 │   └── 📂 test-data/
 │       └── 📄 sample-data.md            # Conjuntos de dados de teste
 ├── 📂 regression-checklist/

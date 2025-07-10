@@ -36,6 +36,10 @@
 ## 🔍 Como Usar
 
 ### 1. **Importação para Excel/Sheets**
+
+📖 **Guia Completo**: Veja o [import-guide.md](./import-guide.md) para instruções detalhadas de importação.
+
+**Passos rápidos:**
 ```
 1. Abra Excel ou Google Sheets
 2. Importe o arquivo test-cases.csv
